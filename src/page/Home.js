@@ -33,12 +33,14 @@ const Home = () => {
     <div>
       <Banner movie={popularMovies.results[Math.floor(Math.random() * popularMovies.results.length)]} />
 
-      <h1>Popular Movies</h1>
-      <MovieSlide movies={popularMovies} />
-      <h1>TopRated Movies</h1>
-      <MovieSlide movies={topRatedMovies} />
-      <h1>UpComing Movies</h1>
-      <MovieSlide movies={upComingMovies} />
+      <div className="movie-container">
+        <h1>Popular Movies</h1>
+        <MovieSlide className="carousel slide" movies={popularMovies} />
+        <h1>TopRated Movies</h1>
+        <MovieSlide className="carousel slide" movies={topRatedMovies} />
+        <h1>UpComing Movies</h1>
+        <MovieSlide className="carousel slide" movies={upComingMovies} />
+      </div>
     </div>
   );
 };

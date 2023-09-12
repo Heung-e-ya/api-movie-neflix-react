@@ -30,7 +30,6 @@ const MovieSlide = ({ movies }) => {
           <MovieCard key={item} item={item} />
         ))}
       </Carousel>
-      ;
     </div>
   );
 };

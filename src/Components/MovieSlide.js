@@ -1,31 +1,65 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
 import MovieCard from "./MovieCard";
+import Pagination from "react-js-pagination";
 
 const responsive = {
-  superLargeDesktop: {
-    // the naming can be any, depends on you.
-    breakpoint: { max: 4000, min: 3000 },
-    items: 5,
-  },
   desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 5,
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2,
+    breakpoint: {
+      max: 3000,
+      min: 1024,
+    },
+    items: 4,
+    partialVisibilityGutter: 40,
   },
   mobile: {
-    breakpoint: { max: 464, min: 0 },
+    breakpoint: {
+      max: 464,
+      min: 0,
+    },
     items: 1,
+    partialVisibilityGutter: 30,
+  },
+  tablet: {
+    breakpoint: {
+      max: 1024,
+      min: 464,
+    },
+    items: 2,
+    partialVisibilityGutter: 30,
   },
 };
 const MovieSlide = ({ movies }) => {
   console.log("movies : ", movies);
   return (
     <div>
-      <Carousel responsive={responsive}>
+      <Carousel
+        additionalTransfrom={0}
+        arrows
+        autoPlaySpeed={3000}
+        centerMode={false}
+        className=""
+        containerClass="container-with-dots"
+        dotListClass=""
+        draggable
+        focusOnSelect={false}
+        infinite
+        itemClass=""
+        keyBoardControl
+        minimumTouchDrag={80}
+        pauseOnHover
+        renderArrowsWhenDisabled={false}
+        renderButtonGroupOutside={false}
+        renderDotsOutside={false}
+        rewind={false}
+        rewindWithAnimation={false}
+        rtl={false}
+        shouldResetAutoplay
+        showDots={false}
+        sliderClass=""
+        slidesToSlide={1}
+        responsive={responsive}
+      >
         {movies.results.map((item) => (
           <MovieCard key={item} item={item} />
         ))}

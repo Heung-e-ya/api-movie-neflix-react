@@ -59,9 +59,9 @@ body {
 }
 
 .card {
-  border: 5px solid yellow;
   width: 400px;
   height: 200px !important;
+
   top: 0;
   right: 0;
   left: 0;
@@ -130,6 +130,7 @@ body {
 .movie-container {
   margin: 50px auto;
   max-width: 1600px;
+  padding: 0 20px;
 }
 /* Trailer */
 #model-btn-open {
@@ -193,8 +194,16 @@ iframe {
 .pro-commnets-text > p {
   margin-bottom: 10px;
 }
-.col-4 {
-  margin-bottom: 1.5rem;
+.col {
+  align-items: center;
+}
+.rowIn-col {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.rowIn-col > a {
+  margin: 5px;
 }
 
 /*  */
@@ -209,6 +218,9 @@ iframe {
   opacity: 0;
   transition: all 0.5s;
   font-family: "Playfair Display", serif;
+}
+.react-multi-carousel-item {
+  margin: 0 10px;
 }
 
 .overlay:hover {

@@ -112,10 +112,10 @@ export default function BasicTabs() {
             <div id="profile6" role="tabpanel" aria-labelledby="profile-tab6">
               <div className="related-movies">
                 <Container className="container-md">
-                  <Row>
-                    {movieRelated?.map((movie) => {
-                      return (
-                        <Col className="col-4">
+                  <Row className="mt-50">
+                    <Col className="col-xl-12 col-lg-12 rowIn-col">
+                      {movieRelated?.map((movie) => {
+                        return (
                           <a
                             className="card "
                             style={{
@@ -138,9 +138,9 @@ export default function BasicTabs() {
                               </div> */}
                             </div>
                           </a>
-                        </Col>
-                      );
-                    })}
+                        );
+                      })}
+                    </Col>
                   </Row>
                 </Container>
               </div>

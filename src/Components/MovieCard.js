@@ -1,3 +1,6 @@
+import { faUser } from "@fortawesome/free-regular-svg-icons";
+import { faImdb } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Badge } from "react-bootstrap";
 import { UseSelector, useSelector } from "react-redux/es/hooks/useSelector";
@@ -33,9 +36,11 @@ const MovieCard = ({ item }) => {
             </li>
           ))}
         </ul>
-        <div>
-          <span>{item.vote_average}</span>
-          <span>{item.adult ? "청불" : "Under 18"}</span>
+        <div className="underline-container">
+          <FontAwesomeIcon className="fab fa-imdb imb-icon" icon={faImdb} />
+          <span className="fab fa-imdb imb-icon">{item.vote_average}</span>
+
+          <span className="eightteen">{item.adult ? "청불" : "Under 18"}</span>
         </div>
       </div>
     </a>

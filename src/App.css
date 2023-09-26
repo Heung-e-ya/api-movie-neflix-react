@@ -1,16 +1,29 @@
+* {
+  list-style: none;
+}
+a {
+  text-decoration: none !important;
+}
 body {
   background-color: black !important;
   color: white !important;
 }
+
 .navbar {
   position: fixed !important;
-  z-index: 10;
+  z-index: 99;
   top: 0;
   left: 0;
   right: 0;
   padding: 0 30px !important;
   background: transparent !important;
   transition: all ease 0.5s !important;
+}
+.navbar-toggler-icon {
+  background-image: url(https://stageaile.com/css/hamburgermenu.svg) !important;
+}
+.navbar-toggler:focus {
+  box-shadow: unset !important;
 }
 .navbar a:hover {
   color: #e1e1e1;
@@ -70,16 +83,121 @@ body {
   z-index: 99;
   border-width: 5px !important;
 }
+
+.breadcrumb-area {
+  background-position: center center;
+  background-size: cover;
+  padding: 120px 0;
+}
 .container {
-  margin-top: 80px;
+  margin: 80px 0;
+}
+.check-container {
+  display: flex;
+  padding: 0;
+  align-items: center;
+}
+.check-container li {
+  margin-right: 10px;
+}
+.underline-container {
+  margin-left: 1rem;
+}
+.underline-container span {
+  margin-left: 10px;
 }
 .detail-img {
   display: flex;
   justify-content: center;
+  text-decoration: none;
+}
+.imb-icon {
+  font-size: 20px !important;
+  color: orange;
+}
+.imb-icon span,
+.users-icon span {
+  margin-left: 5px;
+}
+.users-icon {
+  color: lightslategray;
+  font-size: 20px !important;
+}
+.eightteen {
+  color: crimson;
+  font-family: fantasy !important;
 }
 .movie-container {
   margin: 50px auto;
+  max-width: 1600px;
 }
+/* Trailer */
+#model-btn-open {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fe4536;
+  margin-bottom: 15px;
+}
+#model-btn-close {
+  font-size: 30px;
+  font-weight: bolder;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  z-index: 100;
+}
+#model-btn-open:hover {
+  opacity: 90%;
+  cursor: pointer;
+}
+iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+}
+.trailer {
+  height: 100%;
+  margin-top: 10px;
+}
+.ReactModal__Content {
+  overflow: unset !important;
+  padding: 0 !important;
+}
+/* tablist */
+.tab {
+  color: #fff !important;
+  border: 1px solid !important;
+}
+.Mui-selected {
+  background: crimson !important;
+}
+.css-1aquho2-MuiTabs-indicator {
+  background-color: unset !important;
+}
+.desc-text {
+  padding: 40px;
+  border: 4px solid #f9f9f9;
+}
+
+.pro-commnets-text {
+  overflow: hidden;
+  padding-left: 15px;
+}
+
+.pro-commnets-text h4 {
+  font-size: 17px;
+  margin-top: 10px;
+}
+
+.pro-commnets-text > p {
+  margin-bottom: 10px;
+}
+.col-4 {
+  margin-bottom: 1.5rem;
+}
+
+/*  */
 .overlay {
   width: 100%;
   height: 100%;
@@ -104,6 +222,8 @@ body {
   transition-delay: 0.4s;
 }
 .head p {
+  font-size: 20px;
+  font-weight: bolder;
   margin-left: 20px;
   margin-right: 20px;
 }
@@ -122,7 +242,7 @@ body {
 .card-slider-genres {
   display: inline-block;
   color: #cee4fd;
-  padding-left: 10px;
+  padding-left: 0;
   list-style: none;
   display: flex;
   flex-wrap: wrap;

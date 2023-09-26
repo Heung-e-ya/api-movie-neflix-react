@@ -5,10 +5,12 @@ function Navigation({ black }) {
     <Navbar expand="lg" className={black ? "black" : ""}>
       <Container fluid>
         <Navbar.Brand href="#">
-          <img
-            width={100}
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/200px-Netflix_2015_logo.svg.png"
-          />
+          <Link to="/">
+            <img
+              width={100}
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/200px-Netflix_2015_logo.svg.png"
+            />
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">

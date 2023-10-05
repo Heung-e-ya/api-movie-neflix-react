@@ -7,6 +7,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Navigation from "./Components/Navigation";
 import React, { useEffect, useState } from "react";
 import "react-multi-carousel/lib/styles.css";
+import Login from "./Components/Login";
+import JoinUser from "./Components/JoinUser";
 
 //1. main page , movie page , detail page 3개의 페이지
 //2. 배너를 볼 수있다, 메뉴가 있다, 섹션별 상영작 리스트를 볼 수 있다(popular, top rated, upcoming)
@@ -42,6 +44,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/movies/:id" element={<MovieDetail />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/join" element={<JoinUser />} />
       </Routes>
     </div>
   );

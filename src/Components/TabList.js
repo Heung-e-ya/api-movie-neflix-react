@@ -58,7 +58,7 @@ export default function BasicTabs() {
     let url = `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${API_KEY}&language=en-US&page=1`;
     let response = await fetch(url);
     let data = await response.json();
-    console.log("review", data);
+    // console.log("review", data);
     setMovieReview(data);
   };
   const getMovieRelatedFromAPI = async () => {
@@ -66,7 +66,7 @@ export default function BasicTabs() {
     let url = `https://api.themoviedb.org/3/movie/${id}/similar?api_key=${API_KEY}&language=en-US&page=1`;
     let response = await fetch(url);
     let data = await response.json();
-    console.log("related", data.results);
+    // console.log("related", data.results);
     setMovieRelated(data.results);
   };
   useEffect(() => {

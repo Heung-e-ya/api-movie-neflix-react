@@ -2,17 +2,19 @@ import React, { useState } from "react";
 import { Button, Form, Container, Row, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { authenticateAction } from "../redux/action/authenticateAction";
+import JoinUser from "./JoinUser";
 
-const Login = () => {
+const Login = ({ setAuthenticate }) => {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   const loginUser = (event) => {
     event.preventDefault();
     console.log("login User");
-
+    dispatch(authenticateAction.login(id, password));
     navigate("/");
   };
   const joinUser = () => {
@@ -31,8 +33,8 @@ const Login = () => {
     >
       <Form onSubmit={(event) => loginUser(event)}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>ID</Form.Label>
-          <Form.Control type="email" placeholder="Enter ID" onChange={(e) => setId(e.target.value)} />
+          <Form.Label>Email address</Form.Label>
+          <Form.Control type="email" placeholder="Enter email" onChange={(e) => setId(e.target.value)} />
           <Form.Text className="text-muted">We'll never share your email with anyone else.</Form.Text>
         </Form.Group>
 
@@ -45,12 +47,12 @@ const Login = () => {
           로그인
         </Button>
         <Button
+          variant="light"
+          type="button"
           onClick={() => {
             joinUser();
           }}
           style={{ marginLeft: "5px" }}
-          variant="dark"
-          type="button"
         >
           회원가입
         </Button>

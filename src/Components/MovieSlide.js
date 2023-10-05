@@ -30,7 +30,7 @@ const responsive = {
   },
 };
 const MovieSlide = ({ movies }) => {
-  console.log("movies : ", movies);
+  // console.log("movies : ", movies);
   return (
     <div>
       <Carousel responsive={responsive} rewind rewindWithAnimation swipeable={false} slidesToSlide={1}>

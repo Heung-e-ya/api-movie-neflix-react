@@ -1,5 +1,6 @@
 import { Navbar, Container, Form, Button, Nav, FormControl } from "react-bootstrap";
 import { Link } from "react-router-dom";
+
 function Navigation({ black }) {
   return (
     <Navbar expand="lg" className={black ? "black" : ""}>

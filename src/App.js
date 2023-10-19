@@ -44,12 +44,12 @@ function App() {
   }, [authenticate]);
   return (
     <div>
-      <Navigation authenticate={authenticate} setAuthenticate={setAuthenticate} black={blackHeader} />
+      <Navigation authenticate={authenticate} black={blackHeader} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/movies/:id" element={<PrivateRoute authenticate={authenticate} />} />
-        <Route path="/login" element={<Login setAuthenticate={setAuthenticate} />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/join" element={<JoinUser />} />
       </Routes>
     </div>

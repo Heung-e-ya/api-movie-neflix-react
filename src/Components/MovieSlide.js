@@ -6,7 +6,7 @@ import Pagination from "react-js-pagination";
 const responsive = {
   desktop: {
     breakpoint: {
-      max: 3000,
+      max: 1920,
       min: 1024,
     },
     items: 4,

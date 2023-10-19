@@ -35,6 +35,10 @@ body {
   color: #fff;
   text-decoration: none;
   margin: 20px;
+  cursor: pointer;
+}
+.nav-itme:hover {
+  color: #bbbbbb;
 }
 
 .banner {

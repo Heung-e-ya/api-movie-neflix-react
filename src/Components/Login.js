@@ -17,7 +17,7 @@ const Login = ({ setAuthenticate }) => {
     dispatch(authenticateAction.login(id, password));
     navigate("/");
   };
-  const joinUser = () => {
+  const Login = () => {
     navigate("/join");
   };
   return (
@@ -50,7 +50,7 @@ const Login = ({ setAuthenticate }) => {
           variant="light"
           type="button"
           onClick={() => {
-            joinUser();
+            Login();
           }}
           style={{ marginLeft: "5px" }}
         >

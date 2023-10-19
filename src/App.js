@@ -48,7 +48,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<Movies />} />
-        <Route path="/movies/:id" element={<MovieDetail />} />
+        <Route path="/movies/:id" element={<PrivateRoute authenticate={authenticate} />} />
         <Route path="/login" element={<Login setAuthenticate={setAuthenticate} />} />
         <Route path="/join" element={<JoinUser />} />
       </Routes>

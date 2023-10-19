@@ -1,7 +1,25 @@
 import { Navbar, Container, Form, Button, Nav, FormControl } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Navigate, useNavigate } from "react-router-dom";
+import { authenticateAction } from "../redux/action/authenticateAction";
 
 function Navigation({ black }) {
+  const authenticate = useSelector((state) => state.auth.authenticate);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const goToLogin = () => {
+    navigate("/login");
+    console.log("로긘 값", authenticate);
+  };
+  const goMovieList = () => {
+    navigate("/movies");
+  };
+  const LogOut = () => {
+    navigate("/");
+    dispatch({ type: "LOGOUT", payload: { authenticate } });
+  };
+
   return (
     <Navbar expand="lg" className={black ? "black" : ""}>
       <Container fluid>
@@ -16,15 +34,13 @@ function Navigation({ black }) {
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: "100px" }} navbarScroll>
-            <Link className="nav-itme" to="/">
-              Home
-            </Link>
-            <Link className="nav-itme" to="/Movies">
+            <div onClick={goMovieList} className="nav-itme">
               Movies
-            </Link>
-            <Link className="nav-itme" to="/login">
-              Login
-            </Link>
+            </div>
+
+            <div className="nav-itme" onClick={authenticate == true ? LogOut : goToLogin}>
+              {authenticate == true ? "LogOut" : "Login"}
+            </div>
           </Nav>
 
           <Form className="d-flex">

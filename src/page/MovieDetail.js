@@ -33,7 +33,7 @@ const MovieDetail = () => {
     let url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}&language=en-US`;
     let response = await fetch(url);
     let data = await response.json();
-    // console.log("trailer", data);
+    console.log("trailer", data);
     setTrailer(data.results[0]);
   };
   function closeModal() {

@@ -3,11 +3,23 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router-dom";
 import { authenticateAction } from "../redux/action/authenticateAction";
+import { StoreContext } from "../ThemeContext";
+import { useContext } from "react";
 
 function Navigation({ black }) {
   const authenticate = useSelector((state) => state.auth.authenticate);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  let { keyword } = useContext(StoreContext);
+  let word = "";
+  function getKeyWord(e) {
+    word = e.target.value;
+  }
+  function searchMovie(e) {
+    e.preventDefault();
+    keyword[1](word);
+    navigate("/movies");
+  }
   const goToLogin = () => {
     navigate("/login");
     console.log("로긘 값", authenticate);
@@ -43,9 +55,17 @@ function Navigation({ black }) {
             </div>
           </Nav>
 
-          <Form className="d-flex">
-            <Form.Control type="search" placeholder="Search" className="me-2" aria-label="Search" />
-            <Button variant="danger">Search</Button>
+          <Form className="d-flex" onSubmit={(e) => searchMovie(e)}>
+            <Form.Control
+              onChange={(event) => getKeyWord(event)}
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+            />
+            <Button type="submit" variant="danger">
+              Search
+            </Button>
           </Form>
         </Navbar.Collapse>
       </Container>

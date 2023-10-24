@@ -3,7 +3,6 @@ import { StoreContext } from "../ThemeContext";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import { Link } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
-import { Badge } from "react-bootstrap";
 import { useEffect } from "react";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faImdb } from "@fortawesome/free-brands-svg-icons";
@@ -12,7 +11,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const MovieSingle = ({ movie }) => {
   const { genreList } = useSelector((state) => state.movie);
 
-  useEffect(() => {}, [genreList]);
   return (
     <>
       {movie[0] === null ? (
@@ -36,11 +34,7 @@ const MovieSingle = ({ movie }) => {
               </h4>
               <ul className="card-slider-genres">
                 {movie.genre_ids.map((id) => (
-                  <li>
-                    <Badge key={id} className="genre" bg="danger">
-                      {genreList.find((movie) => movie.id == id).name}
-                    </Badge>
-                  </li>
+                  <li>{genreList.find((movie) => movie.id == id).name}</li>
                 ))}
               </ul>
             </div>

@@ -31,6 +31,7 @@ const MovieList = () => {
     originalMovie[1](res.data.results);
     totalPage[1](res.data.total_pages);
   };
+
   changePage = (numPage) => {
     page[1](numPage);
 
@@ -55,7 +56,7 @@ const MovieList = () => {
             <Row>
               {movie[0].map((movie) => {
                 return (
-                  <Col lg={6}>
+                  <Col className="single-card-col" lg={6}>
                     <MovieSingle movie={movie} key={movie.id}></MovieSingle>
                   </Col>
                 );

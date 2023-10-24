@@ -2,7 +2,7 @@ import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faImdb } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { Badge } from "react-bootstrap";
+
 import { UseSelector, useSelector } from "react-redux/es/hooks/useSelector";
 import { Navigate, useNavigate } from "react-router-dom";
 
@@ -29,11 +29,7 @@ const MovieCard = ({ item }) => {
         </div>
         <ul className="card-slider-genres">
           {item.genre_ids.map((id) => (
-            <li>
-              <Badge key={id} className="genre" bg="danger">
-                {genreList.find((item) => item.id == id).name}
-              </Badge>
-            </li>
+            <li>{genreList.find((item) => item.id == id).name}</li>
           ))}
         </ul>
         <div className="underline-container">

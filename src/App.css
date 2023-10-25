@@ -199,6 +199,9 @@ iframe {
   overflow: unset !important;
   padding: 0 !important;
 }
+.ReactModal__Overlay {
+  z-index: 99 !important;
+}
 /* tablist */
 .tab {
   color: #fff !important;
